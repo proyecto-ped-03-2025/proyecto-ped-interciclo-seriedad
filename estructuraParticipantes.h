@@ -38,6 +38,20 @@ public:
 
     // Devuelve el primer nodo de la lista
     Nodo *head();
+
+    // Inserta un nuevo participante
+    bool inscribir(char nombre[], char id);
+    // Muestra todos los participantes inscritos
+    void listaParticipantes();
+
+    // Buscar un participante por su ID
+    Nodo *buscarPorId(char id);
+
+
+    // Cuenta los nodos de forma iterativa
+    int contar();
+    // Cuenta los nodos de forma recursiva
+    int contarRec();
 };
 
 #endif
