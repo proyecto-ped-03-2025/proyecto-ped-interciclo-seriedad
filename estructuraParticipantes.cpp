@@ -35,3 +35,28 @@ ListaCircular::Nodo *ListaCircular::head()
     // Verifica: si la lista esta vacia retorna NULL, si no, devuelve el primer nodo
     return vacia() ? NULL : tail->sig;
 }
+
+ListaCircular::Nodo *ListaCircular::buscarPorId(char id)
+{
+    // Si la lista esta vacia, no busca nada
+    if (vacia())
+        return NULL;
+
+    // Convierte el ID a mayus para comparacion
+    id = aMayus(id);
+    // Comienza desde el primero
+    Nodo *p = tail->sig;
+    // Recorre la lista
+    do
+    {
+        // Si el ID coincide, devuelve el nodo
+        if (p->id == id)
+            return p;
+        // Se pasa al sig nodo
+        p = p->sig;
+        // Hasta llegar al primero
+    } while (p != tail->sig);
+
+    // Retorna NULL si no encontro el ID
+    return NULL;
+}
