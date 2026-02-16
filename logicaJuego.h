@@ -9,6 +9,7 @@ using namespace std;
 class juegoPPT {
     private:
         int obtenerJugada();
+        void imprimirNombreJugada(int jugada);
     public:
 };
 
