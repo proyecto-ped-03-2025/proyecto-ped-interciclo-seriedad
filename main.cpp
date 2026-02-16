@@ -15,6 +15,21 @@ int main(){
 
     do {
         opcion = menuObj.menuPrincipal();
+
+        switch (opcion) {
+            case 1:
+            menuObj.leerNombre(nombre, 50);
+
+            cout << "Ingresa tu ID (letra unica): \n ";
+            cin >> id;
+
+            if (lista.inscribir(nombre, id)) {
+                    cout << "Participante inscrito con exito.\n";
+                } else {
+                    cout << "Error: ID invalido (no es letra) o ya esta ocupado.\n";
+                }
+                break;
+        }
     } while (opcion != 0);
     return 0;
 }
