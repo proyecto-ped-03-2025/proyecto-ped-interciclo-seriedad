@@ -13,6 +13,7 @@ class juegoPPT {
         int determinarGanador(int p1, int p2);
     public:
     void reiniciarPuntos(ListaCircular& lista);
+    void jugarCompetencia(listaCircular& lista);
 };
 
 
