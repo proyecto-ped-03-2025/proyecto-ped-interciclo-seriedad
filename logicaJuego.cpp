@@ -44,3 +44,15 @@ int JuegoPPT::determinarGanador(int p1, int p2) {
 
     return 2;
 }
+
+void JuegoPPT::reiniciarPuntos(ListaCircular& lista) {
+    if (lista.vacia()) return;
+
+    ListaCircular::Nodo* inicio = lista.head();
+    ListaCircular::Nodo* actual = inicio;
+
+    do {
+        actual->puntos = 0;
+        actual = actual->sig;
+    } while (actual != inicio);
+}
