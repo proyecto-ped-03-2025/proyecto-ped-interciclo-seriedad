@@ -34,3 +34,51 @@ void Menu::leerNombre(char nombre[], int tam) {
     cin.ignore(10000, '\n');
     cin.getline(nombre, tam);
 }
+
+void Menu::mostrarGanador(ListaCircular& lista) {
+    if (lista.vacia()) {
+        cout << "\nNo hay participantes para determinar un ganador.\n";
+        return;
+    }
+
+    ListaCircular::Nodo* inicio = lista.head();
+    ListaCircular::Nodo* actual = inicio;
+    
+    //puntaje maximo
+    int maxPuntos = -1;
+    do {
+        if (actual->puntos > maxPuntos) {
+            maxPuntos = actual->puntos;
+        }
+        actual = actual->sig;
+    } while (actual != inicio);
+
+    //cuantos lo tienen
+    int contadoresMax = 0;
+    actual = inicio;
+    do {
+        if (actual->puntos == maxPuntos) {
+            contadoresMax++;
+        }
+        actual = actual->sig;
+    } while (actual != inicio);
+
+    // resultados ganador  si hay empate
+    cout << "\n=== RESULTADOS DEL TORNEO ===\n";
+    
+    if (contadoresMax > 1) {
+        cout << "EMPATE!\n";
+        cout << "Se encontraron " << contadoresMax << " participantes con " << maxPuntos << ":\n";
+    } else {
+        cout << "GANADOR!\n";
+    }
+
+    // decir el ganador o los que empatan
+    actual = inicio;
+    do {
+        if (actual->puntos == maxPuntos) {
+            cout << "-> " << actual->nombre << " [" << actual->id << "] | Puntos: " << actual->puntos << "\n";
+        }
+        actual = actual->sig;
+    } while (actual != inicio);
+}
