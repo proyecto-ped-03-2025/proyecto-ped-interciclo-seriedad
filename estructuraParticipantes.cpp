@@ -149,3 +149,26 @@ int ListaCircular::contar()
     // Retorna el total de nodos
     return c;
 }
+
+// ===== Recursión =====
+int ListaCircular::contarRecAux(Nodo *actual, Nodo *inicio)
+{
+    if (actual == NULL)
+        return 0;
+    // Si el sig nodo es el inicio significa que esta en el ultimo nodo
+    if (actual->sig == inicio)
+        return 1;
+    // Contar ese nodo + llamada recursiva al sig
+    return 1 + contarRecAux(actual->sig, inicio);
+}
+
+int ListaCircular::contarRec()
+{
+    // Verifica si la lista esta vacia
+    if (vacia())
+        return 0;
+    // Obtiene el primer nodo
+    Nodo *inicio = tail->sig;
+    // Retorna la funcion auxiliar recursiva
+    return contarRecAux(inicio, inicio);
+}
