@@ -5,4 +5,12 @@ using namespace std;
 
 
 
+
+class juegoPPT {
+    private:
+        int obtenerJugada();
+    public:
+};
+
+
 #endif
