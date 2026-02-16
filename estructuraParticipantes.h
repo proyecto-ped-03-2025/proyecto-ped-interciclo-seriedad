@@ -15,6 +15,19 @@ public:
         int puntos;
         Nodo *sig;
     };
+
+private:
+    // Apunta al ultimo nodo de la lista circular
+    Nodo *tail;
+
+    // Convierte un caracter a mayus
+    char aMayus(char c);
+
+    // Verifica si el caracter ingresado es una letra valida
+    bool esLetra(char c);
+
+    // Funcion auxiliar recursiva
+    int contarRecAux(Nodo *actual, Nodo *inicio);
 };
 
 
