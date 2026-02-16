@@ -83,7 +83,7 @@ void Menu::mostrarGanador(ListaCircular& lista) {
     } while (actual != inicio);
 }
 
-void mostrarintegrantes() {
+void Menu::mostrarintegrantes() {
     cout << "\n=== INTEGRANTES DEL PROYECTO ===\n";
     cout << "1. Jose Andres Calles Ramirez - 00054525\n";
     cout << "2. Daniel Alexander Avelar Orellana - 00089625\n";
