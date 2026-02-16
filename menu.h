@@ -12,6 +12,7 @@ public:
     void mostrarayuda();
     void leerNombre(char nombre[], int tam);
     void mostrarGanador(ListaCircular& lista);
+    void mostrarintegrantes();
 };
 
 #endif
