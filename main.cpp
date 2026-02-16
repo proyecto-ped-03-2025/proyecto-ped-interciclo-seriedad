@@ -1,7 +1,7 @@
 #include <iostream>
 #include "estructuraParticipantes.h" 
 #include "logicaJuego.h"       
-#include "Menu.h"              
+#include "menu.h"              
 
 using namespace std;
 int main(){
