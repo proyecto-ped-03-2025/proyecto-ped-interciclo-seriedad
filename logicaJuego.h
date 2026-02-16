@@ -10,6 +10,7 @@ class juegoPPT {
     private:
         int obtenerJugada();
         void imprimirNombreJugada(int jugada);
+        int determinarGanador(int p1, int p2);
     public:
 };
 

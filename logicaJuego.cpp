@@ -33,3 +33,14 @@ void JuegoPPT::imprimirNombreJugada(int jugada) {
     else if (jugada == 3) cout << "Tijera";
     else cout << "Desconocido";
 }
+
+int JuegoPPT::determinarGanador(int p1, int p2) {
+    if (p1 == p2) return 0;
+
+    if ((p1 == 1 && p2 == 3) ||
+        (p1 == 2 && p2 == 1) ||
+        (p1 == 3 && p2 == 2))
+        return 1;
+
+    return 2;
+}
