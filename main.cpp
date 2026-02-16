@@ -53,6 +53,13 @@ int main(){
 
 
         }
+
+        if (opcion != 0) {
+            cout << "\n Presiona ENTER para continuar...";
+            cin.ignore(10000, '\n');
+            cin.get();
+        }
+
     } while (opcion != 0);
     return 0;
 }
