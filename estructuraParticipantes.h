@@ -28,7 +28,16 @@ private:
 
     // Funcion auxiliar recursiva
     int contarRecAux(Nodo *actual, Nodo *inicio);
-};
 
+public:
+    // Constructor de la lista
+    ListaCircular();
+
+    // Verifica si la lista esta vacia
+    bool vacia();
+
+    // Devuelve el primer nodo de la lista
+    Nodo *head();
+};
 
 #endif
