@@ -3,17 +3,17 @@
 #include <iostream>
 using namespace std;
 
+#include "estructuraParticipantes.h"
 
 
-
-class juegoPPT {
+class JuegoPPT {
     private:
         int obtenerJugada();
         void imprimirNombreJugada(int jugada);
         int determinarGanador(int p1, int p2);
     public:
     void reiniciarPuntos(ListaCircular& lista);
-    void jugarCompetencia(listaCircular& lista);
+    void jugarCompetencia(ListaCircular& lista);
 };
 
 
