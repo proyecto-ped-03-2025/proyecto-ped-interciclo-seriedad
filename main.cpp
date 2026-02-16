@@ -29,6 +29,29 @@ int main(){
                     cout << "Error: ID invalido (no es letra) o ya esta ocupado.\n";
                 }
                 break;
+            case 2:
+                lista.listaParticipantes();
+                break;
+            case 3:
+                juego.jugarCompetencia(lista);
+                break;
+            case 4:
+                menuObj.mostrarGanador(lista);
+                break;
+            case 5:
+                menuObj.mostrarayuda();
+                break;
+            case 6: 
+                menuObj.mostrarintegrantes();
+                break;
+            case 0: 
+                cout<< "Saliendo del programa...\n";
+                break;
+            default:
+                cout << "Sea serio, digite una opcion valida.\n";
+
+
+
         }
     } while (opcion != 0);
     return 0;
