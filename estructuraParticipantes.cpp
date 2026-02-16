@@ -42,7 +42,7 @@ ListaCircular::Nodo *ListaCircular::buscarPorId(char id)
     if (vacia())
         return NULL;
 
-    // Convierte el ID a mayus para comparacion
+    // Convierte ID a mayus
     id = aMayus(id);
     // Comienza desde el primero
     Nodo *p = tail->sig;
@@ -59,4 +59,50 @@ ListaCircular::Nodo *ListaCircular::buscarPorId(char id)
 
     // Retorna NULL si no encontro el ID
     return NULL;
+}
+
+bool ListaCircular::inscribir(char nombre[], char id)
+{
+    // Convierte ID a mayus
+    id = aMayus(id);
+    // Verifica que sea letra
+    if (!esLetra(id))
+        return false;
+    // Verifica que el ID no exista
+    if (buscarPorId(id) != NULL)
+        return false;
+
+    // Crea un nuevo nodo
+    Nodo *nuevo = new Nodo;
+
+    // Copia nombre sin usar librerias <cstring>
+    int i = 0;
+    while (nombre[i] != '\0' && i < 49)
+    {
+        nuevo->nombre[i] = nombre[i];
+        i++;
+    }
+    nuevo->nombre[i] = '\0';
+
+    // Se asignan datos
+    nuevo->id = id;
+    nuevo->puntos = 0;
+
+    // Se inserta en la lista circular
+    if (vacia())
+    {
+        // Si esta vacia, el nodo se apunta a si mismo
+        tail = nuevo;
+        tail->sig = tail;
+    }
+    else
+    {
+        // Apunta al primero, el ultimo apunta al nuevo, el nuevo ahora es el ultimo
+        nuevo->sig = tail->sig;
+        tail->sig = nuevo;
+        tail = nuevo;
+    }
+
+    // Retorna true si la insercion fue exitosa
+    return true;
 }
