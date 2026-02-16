@@ -9,6 +9,7 @@ using namespace std;
 class Menu {
 public:
     int menuPrincipal();
+    void mostrarayuda();
 };
 
 #endif

@@ -17,3 +17,14 @@ int Menu::menuPrincipal() {
     cin >> op;
     return op;
 }
+
+void Menu::mostrarayuda() {
+    cout << "\n=== AYUDA ===\n";
+    cout << "Inscribir Participantes: ingrese nombre e ID (letra unica para tu nombre).\n";
+    cout << "Listar Participantes: muestra participantes y puntajes.\n";
+    cout << "Jugar: todos contra todos (sin repetir partidas).\n";
+    cout << "   Jugadas: 1 Piedra, 2 Papel, 3 Tijera.\n";
+    cout << "   Puntaje: ganador=3, empate=1, perder=0.\n";
+    cout << "Reportar Ganador: ganador o EMPATE si todos tienen el mismo puntaje.\n";
+    cout << "Integrantes: muestra los nombres y carnets de los integrantes del proyecto.\n";
+}
