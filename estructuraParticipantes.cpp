@@ -128,3 +128,24 @@ void ListaCircular::listaParticipantes()
         p = p->sig;
     } while (p != tail->sig); // Hasta llegar al primer nodo
 }
+
+int ListaCircular::contar()
+{
+    // Verifica si la lista esta vacia
+    if (vacia())
+        return 0;
+
+    int c = 0;
+    // Empieza desde el primer nodo
+    Nodo *p = tail->sig;
+    // Recorre la lista circular
+    do
+    {
+        // Aumenta el contador y avanza al siguiente nodo
+        c++;
+        p = p->sig;
+    } while (p != tail->sig); // Para hasta llegar al primero
+
+    // Retorna el total de nodos
+    return c;
+}
