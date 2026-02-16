@@ -67,7 +67,7 @@ void JuegoPPT::jugarCompetencia(ListaCircular& lista) {
 
     reiniciarPuntos(lista);
 
-    cout << "\n===== INICIANDO TORNEO (Modo Manual) =====\n";
+    cout << "\n===== INICIANDO TORNEO =====\n";
     cout << "Instrucciones: Cada jugador elige un numero entre 1-3 y presiona Enter.\n";
 
     ListaCircular::Nodo* cabeza = lista.head();
