@@ -9,5 +9,12 @@ int main(){
     JuegoPPT juego;      
     Menu menuObj;        
 
+    int opcion;
+    char nombre[50];
+    char id;
+
+    do {
+        opcion = menuObj.menuPrincipal();
+    } while (opcion != 0);
     return 0;
 }
