@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-
+#include "estructuraParticipantes.h"
 
 class Menu {
 public:
