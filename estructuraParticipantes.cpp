@@ -106,3 +106,25 @@ bool ListaCircular::inscribir(char nombre[], char id)
     // Retorna true si la insercion fue exitosa
     return true;
 }
+
+void ListaCircular::listaParticipantes()
+{
+    // Verificar si la lista está vacía
+    if (vacia())
+    {
+        cout << "\nNo hay participantes inscritos.\n";
+        return;
+    }
+
+    cout << "\n=== PARTICIPANTES ===\n";
+    // Empieza desde el primer nodo
+    Nodo *p = tail->sig;
+    // Recorre la lista circular
+    do
+    {
+        cout << "[" << p->id << "] " << p->nombre
+             << " | Puntos: " << p->puntos << "\n";
+        // Avanza al siguiente nodo
+        p = p->sig;
+    } while (p != tail->sig); // Hasta llegar al primer nodo
+}
