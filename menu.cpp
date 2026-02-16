@@ -28,3 +28,9 @@ void Menu::mostrarayuda() {
     cout << "Reportar Ganador: ganador o EMPATE si todos tienen el mismo puntaje.\n";
     cout << "Integrantes: muestra los nombres y carnets de los integrantes del proyecto.\n";
 }
+
+void Menu::leerNombre(char nombre[], int tam) {
+    cout << "Nombre (con espacios): ";
+    cin.ignore(10000, '\n');
+    cin.getline(nombre, tam);
+}

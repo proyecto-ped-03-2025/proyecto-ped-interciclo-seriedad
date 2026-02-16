@@ -10,6 +10,7 @@ class Menu {
 public:
     int menuPrincipal();
     void mostrarayuda();
+    void leerNombre(char nombre[], int tam);
 };
 
 #endif
