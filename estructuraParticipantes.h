@@ -1,0 +1,57 @@
+#ifndef ESTRUCTURA_PARTICIPANTES_H
+#define ESTRUCTURA_PARTICIPANTES_H
+
+#include <iostream>
+using namespace std;
+
+class ListaCircular
+{
+public:
+    // Se define la estructura que tendra el nodo
+    struct Nodo
+    {
+        char nombre[50];
+        char id;
+        int puntos;
+        Nodo *sig;
+    };
+
+private:
+    // Apunta al ultimo nodo de la lista circular
+    Nodo *tail;
+
+    // Convierte un caracter a mayus
+    char aMayus(char c);
+
+    // Verifica si el caracter ingresado es una letra valida
+    bool esLetra(char c);
+
+    // Funcion auxiliar recursiva
+    int contarRecAux(Nodo *actual, Nodo *inicio);
+
+public:
+    // Constructor de la lista
+    ListaCircular();
+
+    // Verifica si la lista esta vacia
+    bool vacia();
+
+    // Devuelve el primer nodo de la lista
+    Nodo *head();
+
+    // Inserta un nuevo participante
+    bool inscribir(char nombre[], char id);
+    // Muestra todos los participantes inscritos
+    void listaParticipantes();
+
+    // Buscar un participante por su ID
+    Nodo *buscarPorId(char id);
+
+
+    // Cuenta los nodos de forma iterativa
+    int contar();
+    // Cuenta los nodos de forma recursiva
+    int contarRec();
+};
+
+#endif
